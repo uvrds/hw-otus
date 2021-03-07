@@ -10,3 +10,4 @@ func main() {
 	word := "Hello, OTUS!"
 	fmt.Printf("%s", stringutil.Reverse(word))
 }
+ 
