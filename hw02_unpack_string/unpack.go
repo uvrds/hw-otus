@@ -14,8 +14,14 @@ func Unpack(s string) (string, error) {
 	for _, r := range s {
 		check = append(check, r)
 		isDigit := unicode.IsDigit(r)
+		if r == ',' {
+			return "", ErrInvalidString
+		}
 		if isDigit {
 			if len(check) == 1 {
+				return "", ErrInvalidString
+			}
+			if string(check) == "" {
 				return "", ErrInvalidString
 			}
 			ll := check[len(check)-2]
@@ -33,9 +39,6 @@ func Unpack(s string) (string, error) {
 			l = append(l, r)
 		}
 		if isDigit && r != '0' {
-			if string(l) == "" {
-				return "", ErrInvalidString
-			}
 			q, _ := strconv.Atoi(string(r))
 			ll := l[len(l)-1]
 			letter += strings.Repeat(string(ll), q-1)
