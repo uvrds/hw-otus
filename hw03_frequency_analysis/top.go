@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-const top = 11
+const Сtop = 11
 
 var (
 	rn = regexp.MustCompile("\n")
@@ -63,7 +63,7 @@ func Top10(t string) []string {
 	sort.Slice(wordsSort, func(i, j int) bool { return wordsSort[i].w > wordsSort[j].w })
 	sort.SliceStable(wordsSort, func(i, j int) bool { return wordsSort[i].n < wordsSort[j].n })
 
-	for i := len(wordsSort) - 1; i > len(wordsSort)-top; i-- {
+	for i := len(wordsSort) - 1; i > len(wordsSort)-Сtop; i-- {
 		sliceWords = append(sliceWords, wordsSort[i].w)
 	}
 	return sliceWords
