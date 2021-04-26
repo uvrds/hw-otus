@@ -1,9 +1,8 @@
 package hw03frequencyanalysis
 
 import (
-	"testing"
-
 	"github.com/stretchr/testify/require"
+	"testing"
 )
 
 // Change to true if needed.
@@ -50,9 +49,6 @@ func TestTop10(t *testing.T) {
 
 	t.Run("return 10 words", func(t *testing.T) {
 		require.Len(t, Top10(text), 10)
-	})
-	t.Run("more than 10 words", func(t *testing.T) {
-		require.Len(t, Top10("Привет как дела тутрут "), 0)
 	})
 
 	t.Run("positive test", func(t *testing.T) {
