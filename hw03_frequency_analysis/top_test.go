@@ -1,8 +1,9 @@
 package hw03frequencyanalysis
 
 import (
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 // Change to true if needed.
@@ -82,8 +83,6 @@ func TestTop10(t *testing.T) {
 			require.Equal(t, expected, Top10(text))
 		}
 	})
-
-	///my test
 
 	t.Run("checking the output for me less than 10", func(t *testing.T) {
 		expected := []string{
