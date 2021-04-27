@@ -5,20 +5,20 @@ import (
 	"strings"
 )
 
-const top = 10
-
 func Top10(t string) []string {
 	if t == "" {
 		return nil
 	}
-
 	var wordsSort []struct {
 		w string
 		n int
 	}
-	var sliceWords []string
+	sliceWords := make([]string, 0)
 	words := strings.Fields(t)
-
+	top := 10
+	if len(words) < 10 {
+		top = len(words)
+	}
 	for i := 0; i < len(words); i++ {
 		d := words[0]
 		a := 0
@@ -46,6 +46,5 @@ func Top10(t string) []string {
 	for _, i := range wordsSort[:top] {
 		sliceWords = append(sliceWords, i.w)
 	}
-
 	return sliceWords
 }

@@ -82,4 +82,17 @@ func TestTop10(t *testing.T) {
 			require.Equal(t, expected, Top10(text))
 		}
 	})
+
+	///my test
+
+	t.Run("checking the output for me less than 10", func(t *testing.T) {
+		expected := []string{
+			"123",
+		}
+		require.Equal(t, expected, Top10("123"))
+	})
+	t.Run("checking tabs and spaces without text", func(t *testing.T) {
+		expected := []string{}
+		require.Equal(t, expected, Top10("					   				 	  	 	 "))
+	})
 }
